@@ -1,0 +1,120 @@
+
+.header{
+    background-color: rgb(18, 140, 221);
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -12px;
+    padding-right: 40px;
+    
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+    width:75px;
+    object-fit: contain;
+  } 
+  
+  
+  .menu-icon{
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+  .menu-icon>.MuiSvgIcon-root{
+    color: white;
+    margin-left: -40px;
+    margin-right: 150px;
+  
+  }
+  
+  
+  .search{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    padding-left: 10px;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  
+  .search>input{
+    border:none;
+    outline: none;
+    width:20vw;
+    padding-right: 40px;
+  
+  }
+  
+  .search>.MuiSvgIcon-root{
+    padding: 5px;
+  }
+  
+  .offer{
+    color:white;
+    margin-left: 30px;
+    margin-right: 50px;
+    font-weight:550;
+    cursor: pointer;
+    
+  }
+  a:link{
+    text-decoration: none;
+    color: white;
+  }
+  
+  a{
+    color: white;
+  }
+  
+  a:hover {
+    /* background-color: rgb(31, 178, 247); */
+    color: red;
+  }
+  
+  .log-btn{
+    border:none;
+    outline: none;
+    width: 4vw;
+    font-weight:550;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 2px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 20px;
+  }
+  
+  .cartlogo{
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+    cursor: pointer;
+  }
+  
+  .cartlogo>.MuiSvgIcon-root{
+    color: white;
+    padding-right: 5px;
+  }
+  
+  
+  .user{
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  .user:hover{
+    color: red;
+  }
+
+
