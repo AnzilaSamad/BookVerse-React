@@ -1,7 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import './UserTooltip.css';
-
-const UserTooltip = () => {
+function UserTooltip()
+ { 
+    const navigate=useNavigate();
+    const  logoutHandler = (e) => {
+      e.preventDefault ()
+      localStorage.clear();
+      navigate('/'); 
+      window.location.reload();   
+  }
   return (
     <div className="usertooltip">
       <div className="usert">
@@ -13,15 +21,12 @@ const UserTooltip = () => {
       <hr/>
         <p>My Order</p>
       </div>
-      
-      <div className="logout">
+      <div className="logout" onClick={logoutHandler}>
       <hr/>
         <p>Logout</p>
         <hr/>
       </div>
-
     </div>
   );
 };
-
 export default UserTooltip

@@ -9,12 +9,10 @@ import 'tippy.js/dist/tippy.css';
 import UserTooltip from './UserTooltip';
 import 'tippy.js/themes/light.css';
 
-
 const Header = () => {
   return (
     <div className='header'>
-     
-      <a href='/'>
+     <a href='/'>
        < img className='logo' src="logob.png" 
         alt="bookverse logo" />
       </a>
@@ -30,29 +28,30 @@ const Header = () => {
       <div className="offer">
       <a href="/offer">Coupon Offers</a>
       </div>
-
-      <div className="cartlogo">
-      <a href="/cart"><ShoppingCartIcon/></a>
-      </div>
+      {localStorage.getItem("userid")===null?
+      <div className="cartlogo"><a href="/logincart"><ShoppingCartIcon/>
+      </a></div>:
+      <div className="cartlogo"><a href="/cart"><ShoppingCartIcon/>
+      </a></div>
+}
      
-      <div className="log-btn">
-        <a href="/login">Login</a>
-      </div>
-
+     { localStorage.getItem('token')===null?
       
-        
-      <div className="user">
-        <Tippy
-         theme="light" 
-        //  visible={true} 
-         content={<UserTooltip/>}
-          interactive = {true} 
-          offset={[0,15]}>
-        <AccountCircleIcon/>
-        </Tippy>          
-      </div> 
-
-    </div>
+      <div className="log-btn">
+      <a href="/login">Login</a>
+    </div> :
+    <div className="user">
+    <Tippy
+     theme="light" 
+      content={<UserTooltip/>}
+      interactive = {true} 
+      offset={[0,15]}>
+    <AccountCircleIcon/>
+    </Tippy>          
+  </div> 
+}
+</div>
+   
   );
 };
 

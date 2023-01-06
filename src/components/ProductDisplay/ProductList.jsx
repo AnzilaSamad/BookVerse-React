@@ -1,19 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './ProductList.css';
-import { homepage_bookdisplay_url } from "../../Constants";
+import { homepage_bookdisplay_url, token } from "../../Constants";
 function ProductList()
 {
-    const books=[];
-    const [state,setState]=useState(books);
+    const [state,setState]=useState([]);
     const  handleApi = () => {
                 const config = {
-                    headers: {"Authorization" : `Bearer 00DDo000000JB9H!ARkAQCTppB.XjvQKryyuFRftVZMTBsr.AGdQ0Ir05GWqs.mwzfMgx39mDXhpzNURu9gjbBYVlTQbkeK51I0cpHcoT9bF1Cvc`}
+                    headers: {'Authorization' : `Bearer ${token}`}
                 };
                 axios.get(homepage_bookdisplay_url, config)
                 .then ((Response) =>
                 {
                     setState(Response.data);
+                    console.log(Response.data);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -31,10 +31,13 @@ function ProductList()
                         return(
                             <div className="key" key={items.Id}>
                               <div className="image">
+                                <a href={"/productdetails?id=" + items.Id}>
                                <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
+                                </a>
                                 </div>
                                 <p className="bookname"><b>{items.Name} </b></p>
                                 <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
+                                
                                 <p className="authorname"><b>Price : ₹{items.Price} </b> </p>
                             </div>
                         )

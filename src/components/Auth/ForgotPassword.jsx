@@ -10,39 +10,30 @@ function Forgot()
   const [isSubmit,setIsSubmit]= useState(false);
   const [response,setResponse] =useState(false);
   const navigate = useNavigate();
-
   const submitHandler = (e) => {
     setIsSubmit(true);
     navigate("/login");
-
   }
-
   const handleChange = (e) => {
     console.log(e.target);
     const {name,value} = e.target;
     setFormValues({...formValues, [name]:value});
     console.log(formValues);
-      };
-    
+      };    
      const handleSubmit = (e) => {
       e.preventDefault();
       setFormErrors(validate(formValues));
       setIsSubmit(true);
      };
-   
   useEffect( () => {
     console.log(formErrors);
     if(Object.keys(formErrors).length ===0 && isSubmit){
       console.log(formValues); 
     }
-
   },[formErrors]);
-
-    const validate = (values) => {
-      
+    const validate = (values) => {      
       let errors = {};
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i; 
     if (!values.Email)
     {
       errors.Email="email is required";
@@ -50,9 +41,8 @@ function Forgot()
     else if (!regex.test(values.Email))
    {
     errors.Email = "Invalid email format!";
-  }
-       
-    return errors;
+  }      
+   return errors;
   };
   const handleApi = () => {
     console.log(formValues);
@@ -62,15 +52,11 @@ function Forgot()
       setResponse("Email sent successfully",true);
     })
     .catch(error => {
-
-      console.log(error)
-      setResponse("Email not found",true);
-      
-      
+     console.log(error)
+      setResponse("Email not found",true);     
     })
   }
-  return( 
-    
+  return(    
         <div className="auth-form-container">
        <form className="forget-form" onSubmit={handleSubmit} >
           <h1>Forgot Password</h1>
@@ -87,8 +73,4 @@ function Forgot()
         </form>
         </div>
       )}
-      
-    
-
 export default Forgot;
-

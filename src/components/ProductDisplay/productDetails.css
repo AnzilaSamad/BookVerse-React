@@ -1,0 +1,136 @@
+.Product_key{ 
+     margin-left: 10%; 
+     margin-top: 2%;
+    
+}
+.Detail_name,.author_bold{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+.second-div{   
+    flex-direction: column;    
+    margin-top: 10%;    
+   margin-left: -2.5%;
+   
+
+   
+}
+.BookDetailContainer{
+    display:flex;
+    width: fit-content;
+}
+.ImageDivClass{
+    flex:1;
+}   
+.Image_detail{
+    display: flex;
+    width: 300px;
+    height: 400px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px 1px grey;
+    margin-right: 70px;
+    margin-bottom: 10px;
+}
+
+.color{
+    color: green;
+    font-size: large;
+    font-weight: bold;
+}
+.adjustb{
+    color: black;
+    margin-left: 6.3%;
+    font-weight:bold;
+    font-size: large;
+}
+.adjustr{
+    color: black;
+    margin-left: 3.5%;
+    font-weight:bold;
+    font-size: large;
+}
+.adjustp{
+    color: black;
+    margin-left: 5.2%;
+    font-weight:bold;
+    font-size: large;
+}
+.adjustl{
+    color: black;
+    margin-left: 5%;
+    font-weight:bold;
+    font-size: large;
+}
+.adjusti{
+    color: black;
+    margin-left: 7%;
+    font-weight:bold;
+    font-size: large;
+}
+.no_price{
+    color: black;
+    text-decoration: line-through;  
+    
+}
+.price_color{
+    color: red;
+    
+}
+.Summary{
+ max-width: 300px;  
+ text-align: justify;       
+ display:flex;
+ width: fit-content;  
+ margin-left: 60%;  
+ margin-top: -50%;   
+}
+.summary_span{
+    color: black;
+    font-size: large;
+}
+.Detail_Binding,.Detail_date,.Detail_publisher,.Detail_Language,.Detail_isbn,.Detail_genre,.Detail_price,.Detail_availability{
+    font-size: large;
+}
+.adjustg{
+    color: black;
+    font-weight:bold;
+    font-size: large;
+}
+.pricebold{
+    color: black;
+    font-weight:bold;
+    font-size: large;
+    margin-left:8%; 
+}
+.button_design{
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: black;
+
+}
+.button_design:hover{
+    color: white;
+}
+.pricebolddp{
+    color: black;
+    font-weight:bold;
+    font-size: large;
+   
+}
+.colorred{
+    color: red;
+    font-weight:bold;
+    font-size: large;
+}
+.crossicon{
+display: flex;
+margin-left: 100%;
+margin-top: -13%;
+}
+.tickicon{
+    color: green;
+    display: flex;
+    margin-left: 100%;
+    margin-top: -17%;
+}

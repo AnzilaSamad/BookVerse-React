@@ -1,0 +1,36 @@
+.cart_key{
+    display: flex;
+    margin-block-start: 3%;
+    margin-inline-start: 5%;
+    border: 1px solid grey;
+    margin-right: 10px;
+  
+}
+.card1{
+    margin-right: 50px;
+}
+.cart_image{
+
+       
+    height: 200px;
+ 
+}
+
+
+
+.decrease_button{
+display: contents;
+
+color: black;
+
+}
+
+.number_box{
+    height: 30px;
+    width: 30px;
+    
+}
+.signin{
+    color: black;
+    font-size: x-large;
+}

@@ -1,0 +1,67 @@
+ .cartitem_key{
+    display: flex;
+    margin-block-start: 3%;
+    margin-inline-start: 5%;
+   
+    margin-right: 10px;
+  
+}
+.card1{
+    margin-right: 50px;
+
+}
+.card2{ 
+    margin-top: 120px;
+    display: flex;
+}
+.cart_bookimage{
+    height: 300px;
+}
+.decrease_button{
+display: contents;
+color: black;
+
+
+}
+.increase_button{
+    display: contents;
+    color: black;
+}
+
+.number_box{
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+.delete_item{
+    display: contents;
+    color: black;
+}
+
+.remove_item{
+   margin-left: -70px;
+   margin-top: 60px;
+}
+
+.button_align{
+    padding-top: 6px;
+} 
+.cart_bookname{
+    text-align: left;
+    white-space:break-spaces; 
+    width: 230px;
+    font-size: 17px;
+    font-weight:bold;
+}
+.cart_authorname{
+    text-align: left;
+    white-space:break-spaces; 
+    width: 250px;
+    font-size: 17px;
+    font-weight:bold;
+}

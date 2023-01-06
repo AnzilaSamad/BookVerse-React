@@ -1,15 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { fiftypercentoff_url, homepage_bookdisplay_url, sixtypercentoff_url, twentyfivepercentoff_url } from "../../Constants";
+import { fiftypercentoff_url, tenpercentoff_url, token, twentyfivepercentoff_url } from "../../Constants";
 import './ProductList.css'
 function Discount()
 {
     const books=[];
     const [state50,setState50]=useState(books);
     const [state25,setState25]=useState(books);
-    const [state60,setState60]=useState(books);
+    const [state10,setState10]=useState(books);
     const config = {
-        headers: {"Authorization" : `Bearer 00DDo000000JB9H!ARkAQCTppB.XjvQKryyuFRftVZMTBsr.AGdQ0Ir05GWqs.mwzfMgx39mDXhpzNURu9gjbBYVlTQbkeK51I0cpHcoT9bF1Cvc`}
+        headers: {"Authorization" : `Bearer ${token}`}
     };
     const  handleApi = () => {
                 
@@ -29,10 +29,10 @@ function Discount()
                 .catch((error) => {
                     console.log(error);
                 });
-                axios.get(sixtypercentoff_url,config)
+                axios.get(tenpercentoff_url,config)
                 .then ((Response) =>
                 {
-                    setState60(Response.data);
+                    setState10(Response.data);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -46,17 +46,39 @@ function Discount()
       return(
          
             <div className="discountproducts">
+                  <h1 className="h1">10% Offers</h1>
+                <div className="mapitems">
+            { 
+                    state10.map(items => {
+                        return(
+                            <div className="key" key={items.Id}>
+                                 <a href={"/productdetails?id=" + items.Id}>
+                                <div className="image">
+                               <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
+                              </div>
+                              </a>
+                                <p className="bookname"><b>{items.Name} </b></p>
+                                <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
+                                <p className="authorname"><b>Discounted Price : {items.DiscountedPrice} </b></p>
+                            </div>
+                        )
+                    })
+                }
+                </div>
+                <br/>
                 <h1 className="h1">25% Offers</h1>
                 <div className="mapitems">
                  {
                     state25.map(items => {
                         return(
-                            <div className="key" key={items.BookId__c}>
+                            <div className="key" key={items.Id}>
+                                 <a href={"/productdetails?id=" + items.Id}>
                               <div className="image">
-                               <img  src ={items.Images__r.records[0].ImageURL__c} alt="" className="ImageClass"></img>
-                              </div>
+                               <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
+                              </div></a>
                                 <p className="bookname"><b>{items.Name} </b></p>
-                                <p className="authorname"><b>Author Name : {items.AuthorID__r.Name} </b></p>
+                                <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
+                                <p className="authorname"><b>Discounted Price : {items.DiscountedPrice} </b></p>
                             </div>
                         )
                     })
@@ -69,38 +91,20 @@ function Discount()
             { 
                     state50.map(items => {
                         return(
-                            <div className="key" key={items.BookId__c}>
-                              <div className="image">
-                               <img  src ={items.Images__r.records[0].ImageURL__c} alt="" className="ImageClass"></img>
-                                </div>
-                                <p className="bookname"><b>{items.Name} </b></p>
-                                <p className="authorname"><b>Author Name : {items.AuthorID__r.Name} </b></p>
-                                
+                            <div className="key" key={items.Id}>
+                             <a href={"/productdetails?id=" + items.Id}>
+                            <div className="image">
+                             <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
                             </div>
+                            </a>
+                              <p className="bookname"><b>{items.Name} </b></p>
+                              <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
+                              <p className="authorname"><b>Discounted Price : {items.DiscountedPrice} </b></p>
+                          </div>
                         )
                     })
                 }
-                </div>
-                
-                <br/>
-
-                <h1 className="h1">60% Offers</h1>
-                <div className="mapitems">
-            { 
-                    state60.map(items => {
-                        return(
-                            <div className="key" key={items.BookId__c}>
-                              <div className="image">
-                               <img  src ={items.Images__r.records[0].ImageURL__c} alt="" className="ImageClass"></img>
-                                </div>
-                                <p className="bookname"><b>{items.Name} </b></p>
-                                <p className="authorname"><b>Author Name : {items.AuthorID__r.Name} </b></p>
-                                
-                            </div>
-                        )
-                    })
-                }
-                </div>
+                </div>                     
              </div>
         )
 }
