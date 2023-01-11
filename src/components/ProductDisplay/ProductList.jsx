@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './ProductList.css';
 import { homepage_bookdisplay_url, token } from "../../Constants";
+import { Link } from "react-router-dom";
 function ProductList()
 {
     const [state,setState]=useState([]);
@@ -31,9 +32,9 @@ function ProductList()
                         return(
                             <div className="key" key={items.Id}>
                               <div className="image">
-                                <a href={"/productdetails?id=" + items.Id}>
+                                <Link to={"/productdetails?id=" + items.Id}>
                                <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
-                                </a>
+                                </Link>
                                 </div>
                                 <p className="bookname"><b>{items.Name} </b></p>
                                 <p className="authorname"><b>Author Name : {items.Authorname} </b></p>

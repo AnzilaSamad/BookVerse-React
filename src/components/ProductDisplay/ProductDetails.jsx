@@ -22,7 +22,6 @@ function ProductDetails()
            
             .then ((Response) =>
             {
-                console.log(`https://team3-step-dev-ed.develop.my.salesforce.com/services/apexrest/BookRecord?Id=`+searchParams.get("id"))
                 setProduct(Response.data);
                 console.log(Response.data);
             })
@@ -43,20 +42,16 @@ function ProductDetails()
                navigate('/login'); 
             }
             else if(localStorage.getItem("userid")!==null)
-{
-
-
-
+            {
 
             var postData =
              {
-                Cartitems: [ 
-                    {
-                    BookId__c: product[0].Id,
-                    User_ID__c:localStorage.getItem("userid"),
-                    Quantity__c:1,
+                
+                    BookId: product[0].Id,
+                    User_ID:localStorage.getItem("userid"),
                     Images__c:product[0].display_images[0].Id
-                    }]                                                                               
+                    
+                                                                                               
               };
               console.log(postData)
               let axiosConfig = {
@@ -111,7 +106,7 @@ function ProductDetails()
                                  <span className="crossicon"><CancelOutlinedIcon/></span> 
                                  </p>
                                  }
-                           
+                           {}
                               
                                  </div>
                                  </div>

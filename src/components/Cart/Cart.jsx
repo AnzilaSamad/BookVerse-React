@@ -6,12 +6,12 @@ import { token } from "../../Constants";
 import RemoveIcon from '@mui/icons-material/Remove';
 import './Cart.css'
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Link } from "react-router-dom";
 function Cart()
 {
     const {Id} =useParams();
     const [state,setState]=useState([]);
-      
-    const [userItems, setUserItems] = useState('');
+  
     const  handleApi = () => {
                 const config = {
                     headers: {'Authorization' : `Bearer ${token}`}
@@ -19,16 +19,16 @@ function Cart()
                 axios.get(`https://team3-step-dev-ed.develop.my.salesforce.com/services/apexrest/getcartitem?Id=`+localStorage.getItem("userid"), config)
                 .then ((Response) =>
                 {
-                    setUserItems(Response.data[0])
-                    console.log(userItems);
+                    setState(Response.data);
                     setState(Response.data);
                     console.log(Response.data);
-                })
+                  })
                 .catch((error) => {
                     console.log(error);
                 });
             };
 
+         
     useEffect( () => {
         handleApi();
     },[Id]);
@@ -101,21 +101,26 @@ const decreaseItem =(items) =>{
        console.log(err)
      })
     }
+
+    //const total=state[0].Quantity__c*state[0].Book_Price__c;
 }
 
     return(
         <div className="cartalign">
             <h1 className="cart_heading">Shopping Cart</h1>
+        
       
+           
         {
+           
             state.map(items => {
-              
                 return(
                     <div className="cartitem_key"  key={items.BookId__c}>
                     <div className="card1">
-                    <a href={"/productdetails?id=" + items.BookId__c}>
+                    <Link to={"/productdetails?id=" + items.BookId__c}>
                     <img className="cart_bookimage" src={items.Book_image__c}></img>
-                    </a>
+                    </Link>
+                
                     <p className="cart_bookname">{items.BookId__r.Name} </p>
                   
                    <p  className="cart_authorname">Author: {items.AuthorName__c} </p>  
@@ -129,23 +134,26 @@ const decreaseItem =(items) =>{
                       <input className="number_box" type="text" name="quantity" value={items.Quantity__c} disabled /> 
                       <div className="button_align">                             
                       <button className="increase_button" onClick={() => increaseItem(items)}> <AddIcon/></button>
-                      </div>
+                      </div>  
                       <div className="remove_item">
                       <button className="delete_item" onClick={() =>  deleteItem(items.Id)}><DeleteIcon/></button>
                         </div>
-               
+           
                     </div>
-                    
+                   
                     </div>
                 
                 )
             })
+        
         }
        
             
             
 
-       
+       <button>
+        <Link to ="/shipping">
+    Shipping Address </Link> </button>
     </div>
 
     

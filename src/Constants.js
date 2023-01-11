@@ -6,5 +6,5 @@ export const fiftypercentoff_url= "https://team3-step-dev-ed.develop.my.salesfor
 export const twentyfivepercentoff_url="https://team3-step-dev-ed.develop.my.salesforce.com/services/apexrest/getofferbooks/25PercentOff"
 export const tenpercentoff_url="https://team3-step-dev-ed.develop.my.salesforce.com/services/apexrest/getofferbooks/10PercentOff"
 export const usercreation_url="https://team3-step-dev-ed.develop.my.salesforce.com/services/apexrest/userCreation"
-export const token="00DDo000000JB9H!ARkAQFBRBPPUR99i28ohavpZzeCjE277BYgPcz9HzXVJ.gUX.w.YkqZ7Le6S0cPac_3kui.tQSlbvfQLN7vx0L.YKQlLiOtv"
+export const token="00DDo000000JB9H!ARkAQOQdGLW_jaK6ql0QCWRngzNxf_b182MQ_nspe6tOx18pBsxPTNnrgCkwWEbf7P7mb.6llvOMPN7LDE4jME.e4_cvzFcv"
 export const salesforce_login="https://login.salesforce.com/?_ga=2.219168089.1590147275.1664165298-391795815.1663055349"

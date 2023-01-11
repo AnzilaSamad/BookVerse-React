@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,14 +8,18 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import UserTooltip from './UserTooltip';
 import 'tippy.js/themes/light.css';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
+
   return (
+  
     <div className='header'>
-     <a href='/'>
+     <Link to='/'>
        < img className='logo' src="logob.png" 
         alt="bookverse logo" />
-      </a>
+      </Link>
       <div className="menu-icon">
         <MenuIcon/>
       </div>
@@ -26,19 +30,19 @@ const Header = () => {
       </div>
 
       <div className="offer">
-      <a href="/offer">Coupon Offers</a>
+      <Link to="/offer">Coupon Offers</Link>
       </div>
       {localStorage.getItem("userid")===null?
-      <div className="cartlogo"><a href="/logincart"><ShoppingCartIcon/>
-      </a></div>:
-      <div className="cartlogo"><a href="/cart"><ShoppingCartIcon/>
-      </a></div>
+      <div className="cartlogo"><Link to="/logincart"><ShoppingCartIcon/>
+      </Link></div>:
+      <div className="cartlogo"><Link to="/cart"><ShoppingCartIcon/>
+      </Link></div>
 }
      
      { localStorage.getItem('token')===null?
       
       <div className="log-btn">
-      <a href="/login">Login</a>
+      <Link to="/login">Login</Link>
     </div> :
     <div className="user">
     <Tippy

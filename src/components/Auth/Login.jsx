@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState ,useEffect} from "react";
 import { useNavigate, useParams } from "react-router";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { login_url, salesforce_login, token } from "../../Constants";
 function Login()
 {
@@ -84,7 +84,6 @@ console.log(formValues);
       <button className ="link-btn" onClick={submitHandler}>Sign Up</button></div>
      <br/>
       <button className ="link-btn" onClick={submitForgotHandler}>Forgot Password</button>
-      <a className="admin_login" href={salesforce_login}>Admin</a>
     </form>
     </div>
     )

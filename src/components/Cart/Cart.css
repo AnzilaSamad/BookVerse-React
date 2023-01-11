@@ -65,3 +65,33 @@ color: black;
     font-size: 17px;
     font-weight:bold;
 }
+.summary-full{
+    display: flex;
+    flex-direction: column;
+    padding-left:800px ;
+ 
+    
+    
+  }
+  .full-cart-div{
+    display: flex;
+    
+  }
+  .coupen_btn{
+    display: flex;
+  
+  
+  }
+  .apply-btn,.checkout-btn{
+    width: 70px;
+    height:28px;
+    color:white;
+    background-color: black;
+  }
+  .coupen-box{
+    height: 20px;
+    width: 200px;
+    margin-right: 3px;
+    
+  }
+  

@@ -11,6 +11,9 @@ import Header from './components/Header/Header';
 import EmptyCart from './components/Cart/EmptyCart';
 import Cart from './components/Cart/Cart';
 import LoginCart from './components/Cart/LoginCart';
+import Token from './components/SalesforceToken/Token';
+import Shipping from './components/ShippingAddress/Shipping';
+
 
 
 
@@ -19,8 +22,8 @@ function App()
   
   return( 
       <div>   
-        
-         <Header/>
+   
+        <Header/> 
       <Routes>
         <Route path="/" element= {<Home/>} />
         <Route path="/productdetails" element= {<ProductDetails/>} />
@@ -32,8 +35,10 @@ function App()
         <Route path='/emptycart' element={<EmptyCart/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/logincart' element={<LoginCart/>} />
+        <Route path='/shipping' element={<Shipping/>} />
       </Routes>
     </div> 
+ 
   );
 }
 export default App;

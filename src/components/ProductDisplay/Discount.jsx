@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fiftypercentoff_url, tenpercentoff_url, token, twentyfivepercentoff_url } from "../../Constants";
 import './ProductList.css'
 function Discount()
@@ -52,11 +53,11 @@ function Discount()
                     state10.map(items => {
                         return(
                             <div className="key" key={items.Id}>
-                                 <a href={"/productdetails?id=" + items.Id}>
+                                 <Link to={"/productdetails?id=" + items.Id}>
                                 <div className="image">
                                <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
                               </div>
-                              </a>
+                              </Link>
                                 <p className="bookname"><b>{items.Name} </b></p>
                                 <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
                                 <p className="authorname"><b>Discounted Price : {items.DiscountedPrice} </b></p>
@@ -72,10 +73,10 @@ function Discount()
                     state25.map(items => {
                         return(
                             <div className="key" key={items.Id}>
-                                 <a href={"/productdetails?id=" + items.Id}>
+                                 <Link to={"/productdetails?id=" + items.Id}>
                               <div className="image">
                                <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
-                              </div></a>
+                              </div></Link>
                                 <p className="bookname"><b>{items.Name} </b></p>
                                 <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
                                 <p className="authorname"><b>Discounted Price : {items.DiscountedPrice} </b></p>
@@ -92,11 +93,11 @@ function Discount()
                     state50.map(items => {
                         return(
                             <div className="key" key={items.Id}>
-                             <a href={"/productdetails?id=" + items.Id}>
+                             <Link to={"/productdetails?id=" + items.Id}>
                             <div className="image">
                              <img  src ={items.display_images[0].image_url} alt="" className="ImageClass"></img>
                             </div>
-                            </a>
+                            </Link>
                               <p className="bookname"><b>{items.Name} </b></p>
                               <p className="authorname"><b>Author Name : {items.Authorname} </b></p>
                               <p className="authorname"><b>Discounted Price : {items.DiscountedPrice} </b></p>

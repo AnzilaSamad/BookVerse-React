@@ -1,0 +1,90 @@
+.shipping_div{
+    /* width:fit-content; */
+    display: flex;
+    
+    }
+    .shipping_form{
+      
+        display: flex;
+        flex-direction: column;
+        margin-left: 150px;
+    }
+    .h1_shipping{
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .textarea{
+        height: 90px;
+        width: 530px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        text-transform: uppercase;
+        padding-top: 2%;
+        font-size: 16px;
+     
+    
+    }                                                  
+    .flabel{
+        font-size: 20px;
+        padding-bottom: 1%;
+       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+       
+       
+    }
+    .textbox{
+        margin-top: 1%;
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        width: 192px;
+        font-size: 16px;
+        font-family:Georgia, 'Times New Roman', Times, serif;;
+        text-transform: uppercase;
+        border-width: 1px;
+       
+        
+    }
+    .fdiv{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .ldiv{
+        display: flex;
+        flex-direction: column;
+        margin-left: 25%;
+    }
+   .f_l_div{
+    display: flex;
+    
+   }
+   .pdiv{
+    display: flex;
+    flex-direction: column;
+   }
+ .textboxp{
+    margin-top: 1%;
+        width: 192px;
+        font-size: 16px;
+        font-family:'Times New Roman', Times, serif;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-width: 1px;
+ }
+.sbutton{
+    width: 200px;
+    font-size: 16px;
+   
+}
+.bdiv{
+   margin-left: auto;
+   margin-right: auto;
+
+}
+.formerrors{
+    font-size: 17px;
+  
+}
+.formdiv{
+    margin-top: -6%;
+    padding-bottom: 5%;
+}
